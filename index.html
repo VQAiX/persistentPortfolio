@@ -1,60 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="az">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Orxan Quliyev - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <section id="profileHeader"></section>
 
-<h1>Profil</h1>
-<hr>
+  <section>
+    <h2 onclick="toggleSection('aboutList')">Haqqımda</h2>
+    <ul id="aboutList"></ul>
+    <input type="text" id="aboutInput" placeholder="Yeni məlumat əlavə edin">
+    <button onclick="addAbout()">Əlavə et</button>
+    <div class="error-message" id="aboutError"></div>
+  </section>
 
-<!-- Başlıq -->
-<header id="profileHeader"></header>
+  <section>
+    <h2>Haqqımda Mətni</h2>
+    <div id="aboutText"></div>
+  </section>
 
-<!-- Haqqımda -->
-<h2 onclick="toggleSection('aboutSection')">Haqqımda (Klikləyin)</h2>
-<hr>
-<div id="aboutSection" class="hidden">
-  <ul id="aboutList"></ul>
-  <input type="text" id="aboutInput" placeholder="Yeni məlumat əlavə et">
-  <button onclick="addAbout()">Əlavə et</button>
-</div>
+  <section>
+    <h2 onclick="toggleSection('skillsTable')">Bacarıqlar</h2>
+    <table id="skillsTable">
+      <thead>
+        <tr>
+          <th>Kateqoriya</th>
+          <th>Təsvir</th>
+          <th>Əməliyyat</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <input type="text" id="skillsCategory" placeholder="Kateqoriya">
+    <input type="text" id="skillsDescription" placeholder="Təsvir">
+    <button onclick="addSkill()">Əlavə et</button>
+    <div class="error-message" id="skillsError"></div>
+  </section>
 
-<blockquote id="aboutText"></blockquote>
-
-<!-- Bacarıqlar -->
-<h3 onclick="toggleSection('skillsSection')">İxtisas üzrə biliklər (Klikləyin)</h3>
-<hr>
-<div id="skillsSection" class="hidden">
-  <table id="skillsTable">
-    <thead>
-      <tr>
-        <th>Kateqoriya</th>
-        <th>Təsvir</th>
-        <th>Əməliyyatlar</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-  <input type="text" id="skillsCategory" placeholder="Kateqoriya">
-  <input type="text" id="skillsDescription" placeholder="Təsvir">
-  <button onclick="addSkill()">Əlavə et</button>
-</div>
-
-<!-- Əlaqə -->
-<footer>
-  <h3 onclick="toggleSection('contactSection')">Əlaqə məlumatları (Klikləyin)</h3>
-  <hr>
-  <div id="contactSection" class="hidden">
+  <section>
+    <h2 onclick="toggleSection('contactList')">Əlaqə</h2>
     <div id="contactList"></div>
-    <input type="text" id="contactInput" placeholder="Yeni əlaqə məlumatı əlavə et">
+    <input type="text" id="contactInput" placeholder="Əlaqə məlumatı">
     <button onclick="addContact()">Əlavə et</button>
-  </div>
-</footer>
+    <div class="error-message" id="contactError"></div>
+  </section>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
